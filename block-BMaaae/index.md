@@ -32,4 +32,4 @@ db.dropDatabase()
 - check which database you are connected to ?
 db
 - connect to test database
-
+db
