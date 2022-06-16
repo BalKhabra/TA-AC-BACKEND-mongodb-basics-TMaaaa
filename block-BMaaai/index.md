@@ -8,6 +8,9 @@ DB_NAME --collection COLLECTION_NAME --file cities.json(file location) --jsonArr
 (an array of json data)
 ```
 
+mongoimport --db test --collection users --file /Users/balkhabra/Desktop/generated.json --jsonArray
+
+
 host, username and password are optional fields.
 
 - --host : hostname // defaults to localhost:27017
@@ -50,10 +53,13 @@ Go to `https://www.json-generator.com/`
 ```
 mongoexport --db state --collection cities --out ~/Desktop/states/city.json --jsonArray
 ```
+mongoexport --db state --collection cities --out ~/Desktop/states/city.json --jsonArray
+mongoexport --db test --collection users --out ~/Desktop/exported.json --jsonArray
 
 ## BLOCK-writeCode
 
 Export `users` collection from `test` database onto `Desktop` in a file named `exported.json`.
+mongoimport -d DB_NAME -c COLLECTION_NAME --type csv --file elections.csv(file location) --headerline(including header)
 
 #### Import from csv file
 
@@ -66,3 +72,5 @@ mongoimport -d DB_NAME -c COLLECTION_NAME --type csv --file elections.csv(file l
 Generate mock csv data from `https://www.convertcsv.com/generate-test-data.htm`
 
 - insert this mock csv data into `test` database into a collection named `students`
+
+mongoimport -d test -c students --type csv --file ~/Desktop/convertcsv.csv --headerline
